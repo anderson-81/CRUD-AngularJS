@@ -15,3 +15,11 @@ transactional and security features like: SQL Injection Protection, Protection P
   - PHP
   - SQLite. 
   - PDO (For PHP connection).
+
+3 - Features CRUD:
+
+- Login with Session (MD5)
+- Token (sha512)
+- Registration's Form
+- Search for Name and Code 
+
