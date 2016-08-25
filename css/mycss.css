@@ -1,0 +1,103 @@
+#view-source {
+position: fixed;
+display: block;
+right: 0;
+bottom: 0;
+margin-right: 40px;
+margin-bottom: 40px;
+z-index: 900;
+}
+
+@media screen and (max-width:400px){
+
+.ocultar_celular{
+display:none;
+}
+
+.botao_desktop{
+width:100%;
+}
+
+.tabela_celular{
+margin-left:0%;
+text-align:left;
+}
+
+#btnBuscar{
+margin-left:0%;
+width:100%;
+}
+
+.tituloBusca{
+
+}
+
+.logo{
+width:100px;
+}
+
+.logoAngular{
+width:280px;
+}
+}
+
+@media screen and (min-width:401px){
+
+.mostrar_celular, .material-icons{
+display:none;
+}
+
+.botao_celular{
+width:300px;
+}
+
+table{
+margin-left:30%;
+}
+
+#btnBuscar{
+margin-left:36%;
+width:120px;
+}
+
+.tituloBusca{
+margin-left:10%;
+}
+
+h4{
+margin-right:30%;
+}
+
+.logo{
+width:120px;
+}
+}
+
+
+.mdl-layout__header{
+background-color:#9E3D34;
+}
+
+button{
+background-color: #9E3D34;
+}
+
+.mdl-layout__content{
+color:black;
+}
+
+.mdl-layout__content{
+background-color:lightgray; 
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+display: none !important;
+}
+.iconsearch{
+	height:16px;
+}
+
+.columnCenter{
+	text-align:center;
+}
+					
