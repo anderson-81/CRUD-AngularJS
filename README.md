@@ -7,11 +7,11 @@ transactional and security features like: SQL Injection Protection, Protection P
 
 2 - Tools developments: 
 
-2.1 - Client Side: 
+- 2.1 - Client Side: 
 - AngularJS 
 - Material Design (Both Google). 
 
-2.2 - Server side: 
+- 2.2 - Server side: 
 - PHP
 - SQLite. 
 - PDO (For PHP connection).
