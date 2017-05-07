@@ -59,7 +59,7 @@
             </div>
             <div class="row col-md-12">
                <div class="col-md-offset-9">
-                  <img class="logoJ" src="img/logoa.png">
+                  <img class="logoA" src="img/logoa.png">
                </div>
             </div>
             <div class="row col-md-12">
