@@ -426,15 +426,10 @@ app.controller("PessoaFisicaController", function ($scope, $http, $rootScope, $w
 			if (data == 0) {
 				$location.path('/login');
 				ShowInfoModal("Information", "User not authenticated.");
-<<<<<<< HEAD
 				LinkLogin(0);
 			} else {
 				$scope.ativo = true;
 				LinkLogin(1);
-=======
-			} else {
-				$scope.ativo = true;
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 			}
 		});
 	}
@@ -557,22 +552,14 @@ app.controller("UsuarioController", function ($scope, $http, $location) {
 				$location.path('/home');
 				$scope.ativo = true;
 				$scope.btnDeslogar = true;
-<<<<<<< HEAD
 				LinkLogin(1);
-=======
-				$("#linkLogin").empty();
-				$("#linkLogin").append("<span class='glyphicon glyphicon-log-in'></span> Logoff");
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 			} else {
 				//$scope.acao = false;
 				$scope.SetMessageLogin("User not authenticated.");
 				//$scope.ativo = false;
 				$scope.Limpar();
 				$scope.acao = true;
-<<<<<<< HEAD
 				LinkLogin(0);
-=======
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 			}
 			$scope.GerarToken();
 		});
@@ -592,21 +579,11 @@ app.controller("UsuarioController", function ($scope, $http, $location) {
 		}).success(function (data, status, headers, config) {
 			$scope.acao = false;
 			ShowInfoModal("Information", data);
-<<<<<<< HEAD
 			LinkLogin(0);
 			$location.path('/home');
 		});
 	}
 
-=======
-			$location.path('/home');
-			$("#linkLogin").empty();
-			$("#linkLogin").append("<span class='glyphicon glyphicon-log-in'></span> Logon");
-		});
-	}
-
-
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 	$scope.TestarSessao = function () {
 		var opcao = 7;
 		$http.post("Execucao.php", {
@@ -616,26 +593,13 @@ app.controller("UsuarioController", function ($scope, $http, $location) {
 				$scope.divLogin = false;
 				$scope.btnDeslogar = true;
 				$scope.ativo = false;
-<<<<<<< HEAD
 				LinkLogin(1);
-=======
-				$("#linkLogin").empty();
-				$("#linkLogin").append("<span class='glyphicon glyphicon-log-in'></span> Logoff");
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 			} else {
 				$scope.divLogin = true;
 				$scope.btnDeslogar = false;
 				$scope.ativo = true;
-<<<<<<< HEAD
 				LinkLogin(0);
 			}
-
-
-=======
-				$("#linkLogin").empty();
-				$("#linkLogin").append("<span class='glyphicon glyphicon-log-in'></span> Logon");
-			}
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 		});
 	}
 });
@@ -644,9 +608,7 @@ function ShowInfoModal(title, message) {
 	$("#titleModal").text(title);
 	$("#textModal").text(message);
 	$("#infoModal").modal("show");
-<<<<<<< HEAD
 }
-
 
 function LinkLogin(statusLogin) {
 	if (statusLogin == 1) {
@@ -658,13 +620,10 @@ function LinkLogin(statusLogin) {
 		});
 		$("#linkLogin").attr("href", "#");
 		console.log("LinkLogin executado...");
-
 	} else {
 		$("#linkLogin").empty();
 		$("#linkLogin").off();
 		$("#linkLogin").append("<span class='glyphicon glyphicon-log-in'></span> Logon");
 		$("#linkLogin").attr("href", "#login");
 	}
-=======
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 }
