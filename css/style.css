@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 .divToken {
    visibility: hidden;
 }
@@ -17,11 +12,7 @@
 }
 
 .imgAction {
-<<<<<<< HEAD
    width: 25px;
-=======
-   width: 20px;
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 }
 
 .divMessageLogin {
@@ -75,7 +66,7 @@ body{
 	width:50px;
 }
 
-.logoA{
+.logoJ{
 	width:300px;
 }
 
@@ -88,7 +79,6 @@ body{
 	border-radius: 10px;
 }
 
-<<<<<<< HEAD
 .datepicker {
 background-color: #b3daff ;
 color: #333 ;
@@ -98,10 +88,4 @@ color: #333 ;
   color:white !important;
   font-size: 25px !important;
   background-color: #5c2040 !important;
-=======
-
-.datepicker {
-background-color: #b3daff ;
-color: #333 ;
->>>>>>> 7ae82866651d877e5c080105b66993fdf5459995
 }
