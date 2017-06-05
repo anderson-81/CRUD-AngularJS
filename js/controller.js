@@ -40,24 +40,6 @@ app.controller("PessoaFisicaController", function ($scope, $http, $rootScope, $w
 	$scope.errors = [];
 	$scope.pessoas = [];
 
-	$scope.DataInserir = function(){
-		$rootScope.codigo = 0;
-		$rootScope.nome = "Anderson";
-		$rootScope.email = "anderson@testeweb.com";
-		$rootScope.renda = "4321.65";
-		$rootScope.sexo = "M";
-		$rootScope.dataNasc = "12/11/1981";
-	}
-
-	$scope.DataEditar = function(){
-		$rootScope.codigo = 0;
-		$rootScope.nome = "Anderson Conceição";
-		$rootScope.email = "teste@teste.com";
-		$rootScope.renda = "7777.33";
-		$rootScope.sexo = "M";
-		$rootScope.dataNasc = "12/11/1982";
-	}
-
 	$scope.GerarToken = function () {
 		$http.post("token.php").success(function (data) {
 			$scope.token = data;
@@ -80,13 +62,10 @@ app.controller("PessoaFisicaController", function ($scope, $http, $rootScope, $w
 			$scope.showBtnEditar = false;
 			$scope.showBtnIncluir = true;
 			$scope.LimparConsulta();
-			$scope.DataInserir();
-			ShowInfoModal("Try Version", "Data generated for insertion.");
+			$scope.Limpar();
 		} else {
 			$scope.showBtnEditar = true;
 			$scope.showBtnIncluir = false;
-			$scope.DataEditar();
-			ShowInfoModal("Try Version", "Data generated for editing.");
 		}
 	});
 
@@ -318,7 +297,7 @@ app.controller("PessoaFisicaController", function ($scope, $http, $rootScope, $w
 			$scope.acao = true;
 			$http.post("Execucao.php", {
 				opcao: opcao,
-				codigo: 1,
+				codigo: $scope.codigo,
 				nome: $scope.nome,
 				email: $scope.email,
 				renda: $scope.renda,
@@ -342,7 +321,7 @@ app.controller("PessoaFisicaController", function ($scope, $http, $rootScope, $w
 		var token = $scope.token;
 		$http.post("Execucao.php", {
 			opcao: opcao,
-			codigo: 1,
+			codigo: $scope.codigo,
 			token: token
 		}).success(function (data, status, headers, config) {
 			$scope.acao = false;
@@ -355,10 +334,16 @@ app.controller("PessoaFisicaController", function ($scope, $http, $rootScope, $w
 		});
 	}
 
-	
-
 	$scope.LimparClick = function () {
-		$scope.DataInserir();
+		$rootScope.codigo = 0;
+		$rootScope.nome = "";
+		$rootScope.email = "";
+		$rootScope.renda = "";
+		$rootScope.sexo = "M";
+		$rootScope.dataNasc = GerarDataAtual18();
+		$rootScope.showBtnEditar = false;
+		$rootScope.showBtnIncluir = true;
+		$rootScope.edicao = 0;
 	}
 
 	function GerarDataAtual18() {
@@ -392,7 +377,17 @@ app.controller("PessoaFisicaController", function ($scope, $http, $rootScope, $w
 
 
 	$scope.Limpar = function () {
-		$scope.DataInserir();
+		$scope.codigo = 0;
+		$scope.nome = "";
+		$scope.email = "";
+		$scope.renda = "";
+		$scope.sexo = "M";
+
+		$scope.dataNasc = GerarDataAtual18();
+
+		$scope.showBtnEditar = false;
+		$scope.showBtnIncluir = true;
+		$scope.edicao = 0;
 	}
 
 

@@ -2,6 +2,7 @@
 
 require './classes/Cadastro.php';
 
+
 error_reporting(0);
 session_start();
 
@@ -9,11 +10,11 @@ if (isset($_SESSION['login'])) {
     $post = json_decode(file_get_contents("php://input"));
     $opcao = htmlspecialchars(addslashes(trim($post->opcao)));
     $hash = htmlspecialchars(addslashes(trim($post->token)));
-    
+
     if (isset($opcao)) {
         if ($opcao == 1) {
             if ($_SESSION['_token'] == $hash) {
-                if (($post->nome == "Anderson") && ($post->email == "anderson@testeweb.com") && ($post->renda == 4321.65) && ($post->dataNasc == "12/11/1981") && ($post->sexo == "M")) {
+                if (($post->nome != "") && ($post->email != "") && ($post->renda != "") && ($post->dataNasc != "") && ($post->sexo != "")) {
                     $nome = htmlspecialchars(addslashes(trim($post->nome)));
                     $email = htmlspecialchars(addslashes(trim($post->email)));
                     $renda = htmlspecialchars(addslashes(trim($post->renda)));
@@ -21,7 +22,7 @@ if (isset($_SESSION['login'])) {
                     $sexo = htmlspecialchars(addslashes(trim($post->sexo)));
                     echo Cadastro::Incluir_PessoFisica($nome, $email, $renda, $dataNasc, $sexo);
                 } else {
-                    echo "Invalid data or fields empty.";
+                    echo "There Required Fields for insertion empty.";
                 }
             } else {
                 die('Fail.');
@@ -30,7 +31,7 @@ if (isset($_SESSION['login'])) {
 
         if ($opcao == 2) {
             if ($_SESSION['_token'] == $hash) {
-                 if (($post->codigo == 1) && ($post->nome == "Anderson Conceição") && ($post->email == "teste@teste.com") && ($post->renda == 7777.33) && ($post->dataNasc == "12/11/1982") && ($post->sexo == "M")) {
+                if (($post->codigo != "") && ($post->nome != "") && ($post->email != "") && ($post->renda != "") && ($post->dataNasc != "") && ($post->sexo != "")) {
                     $codigo = htmlspecialchars(addslashes(trim($post->codigo)));
                     $nome = htmlspecialchars(addslashes(trim($post->nome)));
                     $email = htmlspecialchars(addslashes(trim($post->email)));
@@ -39,7 +40,7 @@ if (isset($_SESSION['login'])) {
                     $sexo = htmlspecialchars(addslashes(trim($post->sexo)));
                     echo Cadastro::Editar_PessoFisica($codigo, $nome, $email, $renda, $dataNasc, $sexo);
                 } else {
-                    echo "Invalid data or fields empty.";
+                    echo "There Required Fields for edition empty.";
                 }
             } else {
                 die('Fail.');
@@ -48,11 +49,11 @@ if (isset($_SESSION['login'])) {
 
         if ($opcao == 3) {
             if ($_SESSION['_token'] == $hash) {
-                if ($post->codigo == 1) {
+                if ($post->codigo != "") {
                     $codigo = htmlspecialchars(addslashes(trim($post->codigo)));
                     echo Cadastro::Excluir_PessoFisica($codigo);
                 } else {
-                   echo "Invalid code or code empty.";
+                    echo "Code was not informed for deletion.";
                 }
             } else {
                 die('Fail.');
@@ -95,10 +96,10 @@ if (isset($_SESSION['login'])) {
             $login = htmlspecialchars(addslashes(trim($post->login)));
             $senha = htmlspecialchars(addslashes(trim($post->senha)));
 
-            if (($login == "admin") && ($senha  == "121181")) {
+            if (($login != "") && ($senha  != "")) {
                 echo json_encode(Cadastro::Efetuar_Login($login, $senha));
             } else {
-                echo "Invalid data or fields empty.";
+                echo "There Required Fields for login empty.";
             }
         } else {
             die('Fail.');
@@ -106,7 +107,7 @@ if (isset($_SESSION['login'])) {
     }
 
     if ($opcao == 7) {
-         echo VerificarSessao();
+        echo VerificarSessao();
     }
 }
 
