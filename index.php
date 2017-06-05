@@ -33,7 +33,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button> 
-               <a class="navbar-brand" href="#">.:CrudAJS.</a>
+               <a class="navbar-brand" href="#">:CrudAJS.</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
@@ -73,36 +73,37 @@
       </script>
 
        <script type="text/ng-template" id="login.html" ng-controller="UsuarioController">
-          <div class="container">
-             <h1>.:Login.</h1>
-             <div ng-show="divLogin" class="col-md-4">
-
-                 <div class="form-group">
-                    <input type="hidden" class="form-control" ng-model="token" required>
-                 </div>
-
-                 <div class="form-group">
+          <div ng-show="divLogin">
+             <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <h1>:Login.</h1> 
+                    </div>
+                    <div class="form-group">
+                      <input type="hidden" class="form-control" ng-model="token" required>
+                    </div>
+                   <div class="form-group">
                     <div class="divMessageLogin" ng-show="showMessage">
                       <ul>
                           <li ng-repeat="messageLog in messageLogs">{{messageLog}}</li>
                       </ul>
                     </div>
-                 </div>
- 
-                 <div class="form-group">
+                  </div>
+                  <div class="form-group">
                     <label for="login" class="control-label">Login</label>
-                    <input type="text" class="form-control" ng-model="login" required>
-                 </div>
- 
-                 <div class="form-group">
+                    <input type="text" class="form-control" ng-model="login" required readonly>
+                  </div>
+                  <div class="form-group">
                     <label for="login" class="control-label">Password</label>
-                    <input type="password" class="form-control" ng-model="senha" required>
-                 </div>
- 
-                 <div class="form-group">
-                      <button ng-click="EfetuarLogin()" class="col-md-4 btn btn-success">Login</button>
-                 </div>
-             </div>
+                    <input type="password" class="form-control" ng-model="senha" required readonly>
+                  </div>
+                  <div class="form-group">
+                    <button ng-click="EfetuarLogin()" class="col-md-4 btn btn-success pull-right">Login</button>
+                  </div>
+                </div>
+              </div>
+            </div>
          </div>
       </script>
          
@@ -111,7 +112,9 @@
       <script type="text/ng-template" id="cadastro.html" ng-controller="PessoaFisicaController" ng-cloak ng-init="Limpar()" ng-disabled="divReg">
          <div ng-show="ativo">
                  <div id="cadastro" class="container">
-                     <h1>.:Registration.</h1>
+                     <h1>:Registration.</h1>
+
+                     <div class="row">
 
                       <div class="col-md-8">
 
@@ -131,39 +134,40 @@
          
                          <div class="form-group">
                              <label for="nome" class="control-label">Name</label>
-                             <input type="text" class="form-control" ng-model="nome" id="nome" value="{{nome}}" ng-focus="nome_focus" required>
+                             <input type="text" class="form-control" ng-model="nome" id="nome" value="{{nome}}" ng-focus="nome_focus" required readonly>
                          </div>
          
                          <div class="form-group">
                              <label for="email" class="control-label">Email</label>
-                             <input type="text" class="form-control" ng-model="email" id="email" value={{email}} required>
+                             <input type="text" class="form-control" ng-model="email" id="email" value={{email}} required readonly>
                          </div>
          
                          <div class="form-group">
                              <label for="renda" class="control-label">Salary</label>
-                             <input type="text" class="form-control" ng-model="renda" id="renda" value="{{renda}}" required>
+                             <input type="text" class="form-control" ng-model="renda" id="renda" value="{{renda}}" required readonly>
                          </div>
          
                          <div class="form-group">
                              <label for="dataNasc" class="control-label">Date Of Birth</label>
-                             <input type="text" data-date-format="dd/mm/yyyy" class="form-control" data-provide="datepicker" readonly ng-model="dataNasc" value="{{dataNasc}}" required>
+                             <input type="text" data-date-format="dd/mm/yyyy" class="form-control" data-provide="datepicker" readonly ng-model="dataNasc" value="{{dataNasc}}" required readonly>
                          </div>
          
                          <div class="form-group">
                              <label for="sexo" class="control-label">Genre</label>
-                             <select required value="{{sexo}}" class="form-control" id="sexo" ng-model="sexo" required>
+                             <select required value="{{sexo}}" class="form-control" id="sexo" ng-model="sexo" required readonly>
                                  <option value="M">Male</option>
                                  <option value="F">Female</option>
                              </select>
                          </div>
          
                          <div class="form-group">
-                             <button class="col-md-2 btn btn-default" ng-click="Limpar()">Clear</button>
-                             <button ng-click="Incluir()" class="col-md-2 btn btn-success" ng-show="showBtnIncluir" ng-disabled="acao">Insert</button>
-                             <button class="col-md-2 btn btn-info" ng-show="showBtnEditar" ng-disabled="acao"  data-toggle="modal" data-target="#confirmEditModal">Edit</button>
-                             <button class="col-md-2 btn btn-danger" ng-show="showBtnEditar" ng-disabled="acao"  data-toggle="modal" data-target="#confirmDeleteModal">Delete</button>
+                             <button ng-click="Incluir()" class="col-md-2 btn btn-success pull-right" ng-show="showBtnIncluir" ng-disabled="acao">Insert</button>
+                             <button class="col-md-2 btn btn-default pull-right" ng-click="Limpar()">Clear</button>
+                             <button class="col-md-2 btn btn-info pull-right" ng-show="showBtnEditar" ng-disabled="acao"  data-toggle="modal" data-target="#confirmEditModal">Edit</button>
+                             <button class="col-md-2 btn btn-danger pull-right" ng-show="showBtnEditar" ng-disabled="acao"  data-toggle="modal" data-target="#confirmDeleteModal">Delete</button>
                          </div>
                       </div>
+                 </div>
                  </div>
          </div>
          
@@ -210,7 +214,7 @@
       <script type="text/ng-template" id="busca.html" ng-controller="PessoaFisicaController" ng-cloak>
          <div ng-show="ativo">
             <div class="container">
-                <h1>.:Search.</h1>
+                <h1>:Search.</h1>
                 
                 <div class="form-group">
                   <input type="hidden" ng-bind="token">

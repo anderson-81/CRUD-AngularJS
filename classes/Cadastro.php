@@ -17,7 +17,7 @@ class Cadastro {
         if ($ctr->Incluir_PessoFisica() == 1) {
             echo "Successful insertion.";
         } else {
-            echo "Error insertion.";
+            echo "Error Insertion. You may be entering default data again.";
         }
     }
 
