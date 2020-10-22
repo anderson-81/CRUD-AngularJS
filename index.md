@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+# crud-angularjs
 
-You can use the [editor on GitHub](https://github.com/anderson-81/crud-angularjs-php/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![GitHub](https://img.shields.io/github/license/anderson-81/crud-angularjs)![GitHub last commit](https://img.shields.io/github/last-commit/anderson-81/crud-angularjs)![GitHub language count](https://img.shields.io/github/languages/count/anderson-81/crud-angularjs)![GitHub top language](https://img.shields.io/github/languages/top/anderson-81/crud-angularjs)![GitHub All Releases](https://img.shields.io/github/downloads/anderson-81/crud-angularjs/total)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 1 - Description:
+- Registration system: Frontend made in AngularJS. Backend made in PHP with SQLite3 database.
 
-### Markdown
+### 2 - System Characteristics:
+#### 2.1 - Registration:
+- Physical Person registration.
+#### 2.2 - Search:
+- Physical Person search.
+#### 2.3 - Login:
+- Login (SHA512)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 3 - Software and Tools used:
+#### 3.1 - Client Side: 
+- AngularJS 
+	- AngularJS v1.3.14
+		- angular.min.js
+		- angular-locale_pt-br.js
+		- angular-route.min.js
+    
+- Bootstrap
+	- Bootstrap v3.4.1
+	- Datetimepicker for Bootstrap 3
+  
+- jQuery
+	- jQuery v1.12.4 
+	- jquery-maskmoney - v3.1.1
+	- DataTables 1.10.22
+  
+- Moment.js
+	- moment-with-locales
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anderson-81/crud-angularjs-php/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### 3.2 - Server Side:  
+- Interpreted language:
+	- PHP 7.3.23
+  
+- Database:
+	- SQLite 3 
+	- PDO (For PHP connection).
+  
+- Security Features:
+	- SQL Injection protection
+	- PHP Injection Protection 
+	- Cross Site Scripting Protection 
+	- CSRF Protection 
+  
+- Design Patterns concepts used on API made in PHP:
+	- Singleton
+	- Facade
+	- Factory
+	- Abstract Factory
+	- Adapter
+  
+#### 3.3 - Editor: 
+- Visual Studio Code
