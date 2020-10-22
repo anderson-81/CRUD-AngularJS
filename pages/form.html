@@ -1,0 +1,190 @@
+<div class="col-md-offset-2 col-md-8 col-md-offset-2" ng-show="show">
+  <div class="form-group">
+    <h1>Registration</h1>
+    <hr />
+  </div>
+  <div class="form-group">
+    <div
+      class="alert error alert-dismissible fade in"
+      id="errors"
+      ng-show="errors.length > 0"
+    >
+      <a href="" class="close" data-dismiss="alert" aria-label="close"
+        >&times;</a
+      >
+      <h3 class="text-position-error">Errors:</h3>
+      <ul class="text-position-error">
+        <li ng-repeat="error in errors">{{error}}</li>
+      </ul>
+    </div>
+  </div>
+  <form>
+    <div class="form-group">
+      <input
+        type="hidden"
+        id="id"
+        name="id"
+        ng-model="physicalperson.id"
+        value="0"
+      />
+      <input type="hidden" id="token" name="token" ng-model="token" />
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        ng-model="physicalperson.name"
+        maxlength="45"
+        ng-disabled="true"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        ng-model="physicalperson.email"
+        maxlength="45"
+        ng-disabled="true"
+      />
+    </div>
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="salary"
+        name="salary"
+        ng-model="physicalperson.salary"
+        maxlength="18"
+        ng-disabled="true"
+      />
+    </div>
+    <div class="form-group">
+      <label for="birthday">Birthday:</label>
+      <div class="input-group date" name="birthday">
+        <input
+          type="text"
+          class="form-control"
+          ng-model="physicalperson.birthday"
+          maxlength="10"
+          id="birthday"
+          ng-disabled="true"
+          onkeypress="clearBirthday()"
+        />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select
+        id="gender"
+        name="gender"
+        ng-model="physicalperson.gender"
+        class="form-control"
+        ng-disabled="true"
+        readonly
+      >
+        <option value="M" selected>Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <hr />
+    </div>
+    <div class="form-group form-group-right" ng-show="!edition">
+      <a href="#list" class="btn btn-default btn-class" ng-disabled="lock"
+        >Search</a
+      >
+      <button
+        class="btn btn-success btn-class"
+        ng-click="insert()"
+        ng-disabled="lock"
+      >
+        Create
+      </button>
+    </div>
+    <div class="form-group form-group-right" ng-show="edition">
+      <button
+        class="btn btn-danger btn-class"
+        ng-disabled="lock"
+        ng-click="setModalData(2)"
+      >
+        Delete
+      </button>
+      <button
+        class="btn btn-warning btn-class"
+        ng-disabled="lock"
+        ng-click="setModalData(1)"
+      >
+        Edit
+      </button>
+      <a href="#list" class="btn btn-default btn-class" ng-disabled="lock">
+        Search
+      </a>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalRegistration" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Question</h4>
+          </div>
+          <div class="modal-body">
+            <p ng-bind="question"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              No
+            </button>
+            <button
+              type="button"
+              ng-class="classes"
+              data-dismiss="modal"
+              ng-click="method()"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+
+    <!-- default-modal -->
+    <div id="modalDefault" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Information</h4>
+          </div>
+          <div class="modal-body">
+            <p ng-bind="messageModal"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">
+              Ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- default-modal -->
+  </form>
+  <div ng-init="edition ? showDefaultModal(1) : showDefaultModal(0)"></div>
+</div>
+<script src="/assets/resources/js/form.js"></script>

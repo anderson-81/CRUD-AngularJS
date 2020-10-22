@@ -1,0 +1,60 @@
+<div class="col-md-offset-4 col-md-4 col-md-offset-4" ng-show="unlogged"> 
+  <div class="form-group">
+    <h1>Login</h1>
+    <hr />
+  </div>
+  <div class="form-group">
+    <div class="alert error alert-dismissible fade in" id="errors" ng-show="errors.length > 0">
+      <a href="" class="close" data-dismiss="alert" aria-label="close"
+        >&times;</a
+      >
+      <h3 class="text-position-error">Errors:</h3>
+      <ul class="text-position-error">
+        <li ng-repeat="error in errors">{{error}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="form-group">
+  <form>
+      <input
+        type="hidden"
+        id="token"
+        name="token"
+        ng-model="token"
+      />
+    </div>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        class="form-control"
+        ng-model="user.username"
+        name="username"
+        id="username"
+        ng-disabled="lock"
+        ng-keyup="validateKey($event)"
+        readonly
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        class="form-control"
+        ng-model="user.password"
+        name="password"
+        id="password"
+        ng-disabled="lock"
+        ng-keyup="validateKey($event)"
+        readonly
+      />
+    </div>
+    <div class="form-group">
+      <hr />
+    </div>
+    <div class="form-group form-group-right">
+      <a href="#home" class="btn btn-default btn-class" ng-disabled="lock">Cancel</a>
+      <button class="btn btn-success btn-class" ng-click="login()" ng-disabled="lock">Login</button>
+    </div>
+  </form>
+</div>

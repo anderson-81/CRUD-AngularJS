@@ -1,0 +1,30 @@
+<div class="col-md-offset-2 col-md-8 col-md-offset-2" ng-show="show">
+  <div class="form-group">
+    <h1>List</h1>
+    <input type="hidden" ng-model="token" id="token" name="token" />
+    <hr />
+  </div>
+  <div class="form-group">
+    <table
+      class="table table-hover"
+      id="tbPeople"
+      data-page-length="10"
+      style="width: 100%"
+    >
+      <thead>
+        <tr>
+          <th class="text-center">ID</th>
+          <th class="text-left">NAME</th>
+          <th class="text-center">BIRTHDAY</th>
+          <th class="text-center">SELECT</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="form-group">
+    <hr />
+  </div>
+  <div class="form-group form-group-right">
+    <a href="#new" class="btn btn-success btn-class">New</a>
+  </div>
+</div>
